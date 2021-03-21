@@ -1,6 +1,7 @@
 import React from 'react'
-import './App.css'
+
+import Landing from './containers/Landing/Landing'
 
 export default function App () {
-  return <div>{'Hello'}</div>
+  return (<Landing />)
 }
