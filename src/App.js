@@ -1,7 +1,14 @@
 import React from 'react'
 
-import Landing from './containers/Landing/Landing'
+import styles from './App.module.scss'
+import Navbar from './components/Navbar/Navbar'
+import Landing from './pages/Landing/Landing'
 
 export default function App () {
-  return (<Landing />)
+  return (
+    <div className={styles.content}>
+      <Navbar />
+      <Landing />
+    </div>
+  )
 }

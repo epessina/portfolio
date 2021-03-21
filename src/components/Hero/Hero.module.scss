@@ -1,0 +1,48 @@
+@import "styles/variables";
+
+.container {
+  width: 100%;
+  position: absolute;
+  top: 30%;
+  left: 0;
+  color: white;
+}
+
+.presentation_container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+
+  .presentation {
+    padding: 0 $content-padding;
+
+    .text_primary {
+      color: white;
+      font-weight: bold;
+      font-size: 64px;
+
+      .name {
+        color: $color-primary;
+        text-transform: uppercase;
+      }
+    }
+
+    .occupation {
+      font-size: 20px;
+      letter-spacing: 10px;
+      color: $color-tertiary;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.tagline_container {
+  font-weight: bold;
+  font-size: 48px;
+  padding: 0 $content-padding;
+
+  .varying_text {
+    font-size: 64px;
+    text-transform: uppercase;
+  }
+}

@@ -1,12 +1,12 @@
 import React from 'react'
 
 import styles from './Landing.module.scss'
-import Navbar from '../../components/Navbar/Navbar'
+import Hero from '../../components/Hero/Hero'
 
 export default function Landing () {
   return (
-    <main className={styles.main}>
-      <Navbar />
-    </main>
+    <header className={styles.header}>
+      <Hero />
+    </header>
   )
 }

@@ -1,0 +1,12 @@
+@import "styles/variables";
+
+.header {
+  width: 100%;
+  height: 100vh;
+  display: block;
+  position: relative;
+  z-index: 2;
+  background: $bg-dark;
+  overflow: hidden;
+  transition: all .3s ease;
+}
