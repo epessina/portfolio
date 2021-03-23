@@ -1,6 +1,13 @@
 import React from 'react'
+import Typewriter from 'typewriter-effect'
 
 import styles from './Hero.module.scss'
+
+const typeWriterOptions = {
+  strings: ['think', 'design', 'build', 'test', 'deploy'],
+  autoStart: true,
+  loop: true
+}
 
 export default function Hero () {
   return (
@@ -16,15 +23,15 @@ export default function Hero () {
         </div>
       </div>
 
-      <div className={styles.tagline_container}>
-        <div className={styles.tagline}>
-          <div>
+       <div className={styles.tagline_container}>
+          <div className={styles.typewriter_container}>
             <span>{'I '}</span>
-            <span className={styles.varying_text}>{'design'}</span>
+            <Typewriter options={typeWriterOptions}/>
           </div>
-          <div>{'awesome software form start to finish'}</div>
-        </div>
-      </div>
+          <div className={styles.typewriter_sub_text}>
+            {'awesome software form start to finish'}
+          </div>
+       </div>
 
     </div>
   )

@@ -3,7 +3,7 @@
 .container {
   width: 100%;
   position: absolute;
-  top: 30%;
+  top: 25%;
   left: 0;
   color: white;
 }
@@ -14,6 +14,9 @@
   margin-bottom: 100px;
 
   .presentation {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     padding: 0 $content-padding;
 
     .text_primary {
@@ -41,8 +44,18 @@
   font-size: 48px;
   padding: 0 $content-padding;
 
-  .varying_text {
-    font-size: 64px;
-    text-transform: uppercase;
+  .typewriter_container {
+    display: flex;
+    align-items: baseline;
+
+    div {
+      font-size: 64px;
+      text-transform: uppercase;
+      margin-left: 30px;
+    }
+  }
+
+  .typewriter_sub_text {
+    line-height: 1;
   }
 }
