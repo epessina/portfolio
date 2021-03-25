@@ -1,4 +1,7 @@
 import React from 'react'
+import {Link} from 'react-scroll'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons'
 
 import styles from './Navbar.module.scss'
 import {ReactComponent as Logo} from '../../assets/logo_light.svg'
@@ -18,12 +21,20 @@ const navItems = [
   }
 ]
 
-export default function Navbar () {
-  const onNavItemClick = event => {
-    // eslint-disable-next-line no-console
-    console.log(event.target)
+const navIcons = [
+  {
+    id: 'github',
+    icon: faGithub,
+    url: 'https://github.com/epessina'
+  },
+  {
+    id: 'linkedin',
+    icon: faLinkedin,
+    url: 'https://www.linkedin.com/in/edoardopessina/'
   }
+]
 
+export default function Navbar () {
   return (
     <nav className={styles.nav}>
 
@@ -33,10 +44,22 @@ export default function Navbar () {
 
         <div className={styles.nav_items}>
           {navItems.map(navItem => (
-              <a href='#' key={navItem.id} onClick={onNavItemClick}>
+              <Link className={styles.nav_item} key={navItem.id} to={navItem.id}>
                 {navItem.label}
-              </a>
+              </Link>
           ))}
+
+          <div className={styles.icons_container}>
+            {navIcons.map(navIcon => (
+              <div
+                className={styles.icon}
+                key={navIcon.id}
+                onClick={() => window.open(navIcon.url, '_blank')}
+              >
+                <FontAwesomeIcon icon={navIcon.icon}/>
+              </div>
+            ))}
+          </div>
         </div>
 
       </div>
