@@ -1,16 +1,12 @@
-@import "~include-media/dist/include-media";
+@import "../../../../node_modules/include-media/dist/include-media";
 @import "styles/variables";
+@import "../commons";
 
 .nav {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  background: transparent;
+  @extend %base-nav;
 
-  &.in_scroll {
-    background: $bg-dark;
+  @include media("<=sm") {
+    display: none;
   }
 }
 
@@ -33,16 +29,9 @@
 }
 
 .logo {
+  @extend %base-nav-logo;
   height: $nav_logo-size;
   width: $nav_logo-size;
-  padding: $nav_logo-padding-top-bottom 0;
-  cursor: pointer;
-  opacity: 1;
-  transition: opacity .35s ease;
-
-  &:hover {
-    opacity: 0.8;
-  }
 }
 
 .nav_items {

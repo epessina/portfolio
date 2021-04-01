@@ -1,0 +1,25 @@
+@import "styles/variables";
+
+%base-nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: transparent;
+
+  &.in_scroll {
+    background: $bg-dark;
+  }
+}
+
+%base-nav-logo {
+  padding: $nav_logo-padding-top-bottom 0;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity .35s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

@@ -1,0 +1,25 @@
+@import "../../../../node_modules/include-media/dist/include-media";
+@import "styles/variables";
+@import "../commons";
+
+.nav {
+  @extend %base-nav;
+
+  @include media(">sm") {
+    display: none;
+  }
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 2.5%;
+
+  & .logo {
+    @extend %base-nav-logo;
+    height: $nav_logo-size_sm;
+    width: $nav_logo-size_sm;
+    margin-left: 15px;
+  }
+}
