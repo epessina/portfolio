@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {Link, animateScroll} from 'react-scroll'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons'
+import classNames from 'classnames'
 
 import styles from './Navbar.module.scss'
 import {ReactComponent as Logo} from '../../assets/logo_light.svg'
@@ -44,8 +45,13 @@ export default function Navbar () {
     return () => window.removeEventListener('scroll', handleScroll)
   })
 
+  const navClasses = classNames({
+    [styles.nav]: true,
+    [styles.in_scroll]: hasBackground
+  })
+
   return (
-    <nav className={`${styles.nav} ${hasBackground ? styles.bg : ''}`}>
+    <nav className={navClasses}>
 
       <div className={styles.content}>
 
@@ -68,18 +74,18 @@ export default function Navbar () {
                 {navItem.label}
               </Link>
           ))}
+        </div>
 
-          <div className={styles.icons_container}>
-            {navIcons.map(navIcon => (
-              <div
-                className={styles.icon}
-                key={navIcon.id}
-                onClick={() => window.open(navIcon.url, '_blank')}
-              >
-                <FontAwesomeIcon icon={navIcon.icon}/>
-              </div>
-            ))}
-          </div>
+        <div className={styles.nav_icons}>
+          {navIcons.map(navIcon => (
+            <div
+              className={styles.nav_icon}
+              key={navIcon.id}
+              onClick={() => window.open(navIcon.url, '_blank')}
+            >
+              <FontAwesomeIcon icon={navIcon.icon}/>
+            </div>
+          ))}
         </div>
 
       </div>

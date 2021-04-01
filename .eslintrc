@@ -25,6 +25,7 @@
       "return": "parens-new-line",
       "arrow": "parens-new-line"
     }],
+    "react/prop-types": 0,
     "react/no-multi-comp": [2, {"ignoreStateless": true}],
     "react/no-unused-prop-types": 2,
     "react/no-unused-state": 2,

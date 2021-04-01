@@ -1,3 +1,10 @@
+$breakpoints: (
+  sm: 640px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
 $color-primary: #FDF3B5;
 $color-tertiary: #b0b2c3;
 $bg-dark: #1D1F21;
@@ -6,3 +13,6 @@ $content-padding: 200px;
 $content-padding-sm: 100px;
 
 $nav-height: 84px;
+$nav_logo-size: 54px;
+$nav_logo-size_sm: 45px;
+$nav_logo-padding-top-bottom: 10px;
