@@ -4,12 +4,17 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import classNames from 'classnames'
 
 import styles from './Navbar.module.scss'
-import {navItems, navIcons, registerScroll, LogoElement} from '../commons'
+import {navItems, navIcons, LogoElement} from '../commons'
 
 export default function Navbar () {
   const [hasBackground, setHasBackground] = useState(false)
 
-  useEffect(() => registerScroll(setHasBackground), [])
+  const handleScroll = () => setHasBackground(window.scrollY > 20)
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const navClasses = classNames({
     [styles.nav]: true,
@@ -21,7 +26,7 @@ export default function Navbar () {
 
       <div className={styles.content}>
 
-        {LogoElement}
+        {LogoElement(styles.logo)}
 
         <div className={styles.nav_items}>
           {navItems.map(navItem => (

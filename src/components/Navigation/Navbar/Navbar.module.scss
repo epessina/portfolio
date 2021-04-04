@@ -4,6 +4,11 @@
 
 .nav {
   @extend %base-nav;
+  background: transparent;
+
+  &.in_scroll {
+    background: $bg-dark;
+  }
 
   @include media("<=sm") {
     display: none;

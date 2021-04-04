@@ -3,7 +3,6 @@ import {faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons'
 import {animateScroll} from 'react-scroll'
 
 import {ReactComponent as Logo} from '../../assets/logo_light.svg'
-import styles from './Navbar/Navbar.module.scss'
 
 export const navItems = [
   {
@@ -33,15 +32,9 @@ export const navIcons = [
   }
 ]
 
-export const registerScroll = (setHasBackground) => {
-  const handleScroll = () => setHasBackground(window.scrollY > 20)
-  window.addEventListener('scroll', handleScroll)
-  return () => window.removeEventListener('scroll', handleScroll)
-}
-
-export const LogoElement = (
+export const LogoElement = className => (
   <Logo
-    className={styles.logo}
+    className={className}
     onClick={() => animateScroll.scrollToTop({duration: 1000, smooth: true})}
     title=' '
   />
