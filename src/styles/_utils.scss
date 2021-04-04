@@ -1,0 +1,13 @@
+@import "../../node_modules/include-media/dist/include-media";
+
+%content-size {
+  width: 1000px;
+
+  @include media(">=xl") {
+    width: 1170px;
+  }
+
+  @include media("<=1024px") {
+    width: 95%;
+  }
+}

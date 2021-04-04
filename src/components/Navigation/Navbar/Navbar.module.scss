@@ -1,5 +1,6 @@
 @import "../../../../node_modules/include-media/dist/include-media";
 @import "styles/variables";
+@import "styles/utils";
 @import "../commons";
 
 .nav {
@@ -16,21 +17,13 @@
 }
 
 .content {
-  width: 1000px;
+  @extend %content-size;
   height: 100%;
   margin: auto;
   display: grid;
   grid-template-columns: min-content 1fr min-content;
   align-items: center;
   color: white;
-
-  @include media(">=xl") {
-    width: 1170px;
-  }
-
-  @include media("<=1024px") {
-    width: 95%;
-  }
 }
 
 .logo {

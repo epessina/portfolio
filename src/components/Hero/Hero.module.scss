@@ -1,4 +1,5 @@
 @import "styles/variables";
+@import "styles/utils";
 
 .container {
   width: 100%;
@@ -8,37 +9,58 @@
   color: white;
 }
 
+.content {
+  @extend %content-size;
+  margin: 0 auto;
+}
+
 .presentation_container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 100px;
+  display: grid;
+  grid-template-rows: min-content min-content;
+  justify-items: center;
 
-  .presentation {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    padding: 0 $content-padding;
+  .text_primary {
+    color: white;
+    font-weight: bold;
+    font-size: 64px;
+    text-align: center;
 
+    .name {
+      color: $color-primary;
+      text-transform: uppercase;
+    }
+  }
+
+  .occupation {
+    font-size: 20px;
+    letter-spacing: 28px;
+    color: $color-tertiary;
+    text-transform: uppercase;
+    text-align: center;
+    margin-left: 25px;
+  }
+
+  @include media("<=1024px") {
     .text_primary {
-      color: white;
-      font-weight: bold;
-      font-size: 64px;
-
-      .name {
-        color: $color-primary;
-        text-transform: uppercase;
-      }
+      font-size: 48px;
     }
 
     .occupation {
-      font-size: 20px;
-      letter-spacing: 10px;
-      color: $color-tertiary;
-      text-transform: uppercase;
+      font-size: 16px;
+      letter-spacing: 20px;
+      margin-left: 20px;
+    }
+  }
+
+  @include media("<=sm") {
+    .text_primary {
+      font-size: 32px;
     }
 
-    @media (max-width: 1300px) {
-      padding: 0 $content-padding-sm;
+    .occupation {
+      font-size: 14px;
+      letter-spacing: 11px;
+      margin-left: 11px;
     }
   }
 }
