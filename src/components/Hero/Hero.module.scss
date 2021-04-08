@@ -4,7 +4,7 @@
 .container {
   width: 100%;
   position: absolute;
-  top: 25%;
+  top: 40%;
   left: 0;
   color: white;
 }
@@ -62,30 +62,5 @@
       letter-spacing: 11px;
       margin-left: 11px;
     }
-  }
-}
-
-.tagline_container {
-  font-weight: bold;
-  font-size: 48px;
-  padding: 0 $content-padding;
-
-  .typewriter_container {
-    display: flex;
-    align-items: baseline;
-
-    div {
-      font-size: 64px;
-      text-transform: uppercase;
-      margin-left: 30px;
-    }
-  }
-
-  .typewriter_sub_text {
-    line-height: 1;
-  }
-
-  @media (max-width: 1300px) {
-    padding: 0 $content-padding-sm;
   }
 }
