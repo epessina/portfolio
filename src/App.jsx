@@ -4,7 +4,6 @@ import variables from './styles/exports.module.scss'
 import styles from './App.module.scss'
 import Navbar from './components/Navigation/Navbar'
 import Landing from './pages/Landing'
-import About from './pages/About'
 import MobileMenu from './components/Navigation/MobileMenu'
 
 export default function App () {
@@ -20,7 +19,6 @@ export default function App () {
     <div className={styles.content}>
       {windowWidth > variables.breakpointSm.slice(0, -2) ? <Navbar /> : <MobileMenu />}
       <Landing />
-      <About />
     </div>
   )
 }
