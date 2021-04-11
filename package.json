@@ -4,7 +4,7 @@
   "description": "Edoardo Pessina's personal portfolio",
   "license": "MIT",
   "author": "Edoardo Pessina <edoardopessina.priv@gmail.com>",
-  "homepage": "https://edoardopessina.me/",
+  "homepage": "http://epessina.github.io/portfolio",
   "repository": {
     "type": "git",
     "url": "https://github.com/epessina/portfolio.git"
@@ -15,7 +15,10 @@
     "build": "NODE_ENV=production INLINE_RUNTIME_CHUNK=false react-scripts build",
     "lint": "eslint src --ext .jsx",
     "eject": "react-scripts eject",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "copycname": "cp ./CNAME ./build/CNAME",
+    "predeploy": "yarn build && yarn copycname",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
@@ -36,6 +39,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.3.1",
     "eslint-plugin-standard": "^5.0.0",
+    "gh-pages": "^3.1.0",
     "husky": "^6.0.0",
     "include-media": "^1.4.9",
     "node-sass": "^5.0.0"
